@@ -1,0 +1,71 @@
+/* Container for the entire apartments list */
+.apartments-list {
+    margin: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  /* Title of the page */
+  .title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the apartment cards */
+  .apartment-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Styling for each apartment card */
+  .apartment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  /* Hover effect for cards */
+  .apartment-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  /* Header inside the apartment card */
+  .apartment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Category label styling */
+  .category {
+    background-color: #17a2b8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+  }
+  
+  /* Apartment details */
+  .apartment-details p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Message when no apartments are found */
+  .no-apartments-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+  }
+  

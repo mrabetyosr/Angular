@@ -1,0 +1,27 @@
+<div class="apartments-list">
+    <h2 class="title">List of Apartments for Residence {{ residenceId }}</h2>
+    
+    <!-- Vérifier s'il y a des appartements à afficher -->
+    <div *ngIf="apartments.length > 0; else noApartments">
+      <div class="apartment-cards-container">
+        <div *ngFor="let apartment of apartments" class="apartment-card">
+          <div class="apartment-header">
+            <h3>Apartment Number: {{ apartment.apartNum }}</h3>
+            <span class="category">{{ apartment.category }}</span>
+          </div>
+          <div class="apartment-details">
+            <p><strong>Floor:</strong> {{ apartment.floorNum }}</p>
+            <p><strong>Surface:</strong> {{ apartment.surface }} m²</p>
+            <p><strong>Terrace:</strong> {{ apartment.terrace ? 'Yes' : 'No' }}</p>
+            <p><strong>Terrace Surface:</strong> {{ apartment.surfaceterrace }} m²</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Afficher un message si aucun appartement n'est trouvé -->
+    <ng-template #noApartments>
+      <p class="no-apartments-message">No apartments available for this residence.</p>
+    </ng-template>
+  </div>
+  

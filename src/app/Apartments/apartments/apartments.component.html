@@ -1,0 +1,29 @@
+<div class="apartments-list">
+    <h2>List of Apartments</h2>
+    
+    <!-- Table displaying the apartments -->
+    <table class="apartments-table">
+      <thead>
+        <tr>
+          <th>Apartment Number</th>
+          <th>Floor</th>
+          <th>Surface (m²)</th>
+          <th>Terrace</th>
+          <th>Surface of Terrace (m²)</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let apartment of apartments">
+          <td>{{ apartment.apartNum }}</td>
+          <td>{{ apartment.floorNum }}</td>
+          <td>{{ apartment.surface }}</td>
+          <td>{{ apartment.terrace ? 'Yes' : 'No' }}</td>
+          <td>{{ apartment.surfaceterrace }}</td>
+          <td>{{ apartment.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

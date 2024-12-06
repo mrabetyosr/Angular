@@ -1,0 +1,89 @@
+/* Main Card Container */
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px; /* Limit card size */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Card Header */
+  .card-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Card Title */
+  .card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Card Body */
+  .card-body {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Status Styling */
+  .status-open {
+    color: #28a745;
+  }
+  
+  .status-sold {
+    color: #dc3545;
+  }
+  
+  .status-under-construction {
+    color: #ffc107;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Button Styling */
+  .btn-next {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .btn-next:hover {
+    background-color: #0056b3;
+  }
+ 
+  
+  /* Loading State */
+  #loading {
+    font-size: 1.2rem;
+    color: #888;
+  }
+  

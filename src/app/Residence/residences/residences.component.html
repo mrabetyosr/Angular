@@ -1,0 +1,63 @@
+<p>residences works!</p>
+<input
+  type="text"
+  placeholder="chercher par address"
+  [(ngModel)]="search_item"
+/>
+<table class="table table-striped">
+  <tr>
+    <Th>Image</Th>
+    <Th>name</Th>
+    <Th>status</Th>
+    <Th>Action</Th>
+  </tr>
+  <tr *ngFor="let item of filtreByAddress()">
+    <td>
+      <img
+        [src]="item.image"
+        alt="{{ item.name }}"
+        width="100px"
+        height="100px"
+      />
+    </td>
+    <td>{{ item.name }}</td>
+    <td *ngIf="item.status === 'Disponible'" style="color: green">
+      {{ item.status }}
+    </td>
+    <td *ngIf="item.status === 'Vendu'" style="color: red">
+      {{ item.status }}
+    </td>
+    <td *ngIf="item.status === 'En Construction'" style="color: orange">
+      {{ item.status }}
+    </td>
+
+    <td>
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="showLocation(item.address)"
+      >
+        Show location
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="addFavorite(item)"
+      >
+        Like
+      </button>
+      <button type="button" class="btn btn-outline-danger" [routerLink]="['/residences',item.id]">Details</button>
+      <button type="button" class="btn btn-outline-success" [routerLink]="['/apartments-by-residence', item.id]">
+        List Apartments
+      </button>
+
+      <!-- <button type="button" class="btn btn-outline-danger" [routerLink]="['wishList']">Like</button>
+        <button type="button" class="btn btn-outline-danger" [routerLink]="['productList']">products</button> -->
+    </td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>
+<!-- <ul *ngFor="let favorite of favoris">
+    <li >{{favorite.id}} - {{favorite.name}}</li>
+</ul> -->

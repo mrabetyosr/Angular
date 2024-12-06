@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Update Residence' : 'Add New Residence' }}</h2>
+    <form (ngSubmit)="saveResidence()" [formGroup]="residenceForm">
+      <div class="form-group">
+        <label for="name">Residence Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          class="form-control" 
+          formControlName="name"
+          placeholder="Enter Residence Name"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input 
+          type="text" 
+          id="address" 
+          class="form-control" 
+          formControlName="address"
+          placeholder="Enter Address"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input 
+          type="text" 
+          id="image" 
+          class="form-control" 
+          formControlName="image"
+          placeholder="Enter Image URL"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select class="form-control" id="status" formControlName="status">
+          <option value="Disponible">Disponible</option>
+          <option value="Vendu">Vendu</option>
+          <option value="En Construction">En Construction</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Update Residence' : 'Add Residence' }}</button>
+    </form>
+  </div>
+  

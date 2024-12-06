@@ -1,0 +1,38 @@
+<p><strong>L'ID de cette residence : {{ idR }}</strong></p>
+<div *ngIf="residenceDetails; else notFoundTemplate" class="details-card">
+    <!-- Card Header -->
+    <div class="card-header">
+      <img [src]="residenceDetails.image" alt="{{ residenceDetails.name }}" class="card-img" />
+      <h2 class="card-title">{{ residenceDetails.name }}</h2>
+    </div>
+  
+    <!-- Card Body -->
+    <div class="card-body">
+      <p><strong>Adresse :</strong> {{ residenceDetails.address }}</p>
+      <p><strong>Statut :</strong>
+        <span [ngClass]="{
+            'status-open': residenceDetails.status === 'Disponible',
+            'status-sold': residenceDetails.status === 'Vendu',
+            'status-under-construction': residenceDetails.status === 'En Construction'
+        }">
+          {{ residenceDetails.status }}
+        </span>
+      </p>
+    </div>
+  
+    <!-- Card Footer (Next Button) -->
+    <div class="card-footer">
+      <button (click)="goToNextResidence()" class="btn-next">Next</button>
+        <button (click)="goToAddResidence()" class="btn-add">Add Residence</button>
+        <button (click)="goToUpdateResidence()" class="btn-update">Update Residence</button>
+      </div>
+    </div>
+  
+  <!-- Loading Template 
+  <ng-template #loading>
+    <p id="loading"><strong>ID not found !!!!</strong></p>
+  </ng-template>-->
+  <!-- Define the Not Found Template -->
+<ng-template #notFoundTemplate>
+    <app-not-found></app-not-found>  <!-- Display the NotFoundComponent here -->
+  </ng-template>
